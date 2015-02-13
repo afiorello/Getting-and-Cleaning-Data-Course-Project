@@ -28,8 +28,8 @@ TY<- rbind(TestY, TrainY)
 #measurements on the mean and standard deviation for each measurement
 names(TSubject)<-c("Subject")
 names(TY)<- c("Activity")
-names(TX)<- TXNames$V2
 TXNames <- read.table(("features.txt"))
+names(TX)<- TXNames$V2
 MSNames<-TXNames$V2[grep("*mean*|*std*",TXNames$V2)]
 TYNames<-read.table(("activity_labels.txt"))
 
@@ -67,3 +67,4 @@ result <- aggregate(OnlyDataSet[, 1:(ncol(OnlyDataSet)-2)],
                   by=list(Subject = OnlyDataSet$Subject, 
                           Activity = OnlyDataSet$Activity),
                   mean)
+write.table(result,"result.txt",row.name=FALSE)
