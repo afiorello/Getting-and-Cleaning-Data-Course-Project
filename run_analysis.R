@@ -1,31 +1,31 @@
-#checking for a data directory and creating it if not exist
+#Checks for a data directory and creates it if not exist.
 if(!file.exists("pzip")){
     dir.create("pzip")
 }
-#download file project.zip from coursera project web site
+#Downloads file project.zip from the coursera project web site.
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl,destfile="project.zip",method="curl")
 unzip(zipfile="project.zip",exdir="./pzip")
-#set working directory
+#sets the working directory
 setwd("pzip/UCI HAR Dataset")
-#read data tables test
+#reads data tables test
 TestSubject<-read.table("./test/subject_test.txt")
 TestX<-read.table("./test/X_test.txt")
 TestY<-read.table("./test/Y_test.txt")
-#read data tables traing
+#reads data tables traing
 TrainSubject<-read.table("./train/subject_train.txt")
 TrainX<-read.table("./train/X_train.txt")
 TrainY<-read.table("./train/Y_train.txt")
 
-#Merge Subject tables
+#Merges Subject tables
 TSubject <- rbind(TestSubject, TrainSubject)
-#Merge Features tables
+#Merges Features tables
 TX<- rbind(TestX, TrainX)
-#Merge Activity tables
+#Merges Activity tables
 TY<- rbind(TestY, TrainY)
 
-#Names columns in TSubject, TX, TY and prepare name for dataset with only the 
-#measurements on the mean and standard deviation for each measurement
+#Names columns in TSubject, TX, TY and prepares names for dataset with only 
+#the measurements of the mean and standard deviation for each measurement.
 names(TSubject)<-c("Subject")
 names(TY)<- c("Activity")
 TXNames <- read.table(("features.txt"))

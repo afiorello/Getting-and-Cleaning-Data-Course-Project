@@ -54,27 +54,27 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="code-book" class="section level1">
 <h1>Code Book</h1>
-<p>This Code Book describesthe variables, the data, and any transformations or work that you performed to clean up the data</p>
+<p>This Code Book describes the variables, the data, and any transformations or work performed to clean up the data</p>
 <div id="original-data-source" class="section level3">
 <h3>Original Data Source</h3>
-<p>The original data source represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">full description of original data source</a></p>
-<p><a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">Here are the original data source</a></p>
+<p>The original data source represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">full description of original data source</a>.</p>
+<p><a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">Here are the original data source</a>.</p>
 </div>
-<div id="the-targets" class="section level3">
-<h3>The targets</h3>
-<p>Creates one R script called <strong><em>run_analysis.R</em></strong> that does the following:</p>
+<div id="goals" class="section level3">
+<h3>Goals</h3>
+<p>Createing one R script called <strong><em>run_analysis.R</em></strong> that does the following:</p>
 <ol style="list-style-type: decimal">
-<li>Merges the training and the test sets to create one data set.</li>
-<li>Extracts only the measurements on the mean and standard deviation for each measurement.</li>
-<li>Uses descriptive activity names to name the activities in the data set.</li>
+<li>Merge the training and the test sets to create one data set.</li>
+<li>Extract only the measurements on the mean and standard deviation for each measurement.</li>
+<li>Use descriptive activity names to name the activities in the data set.</li>
 <li>Appropriately labels the data set with descriptive variable names.</li>
-<li>From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.</li>
+<li>From the data set in step 4, the script creates a second, independent tidy data set with the average of each variable for each activity and each subject.</li>
 </ol>
 </div>
-<div id="the-work" class="section level3">
-<h3>The Work</h3>
-<div id="the-data-work" class="section level4">
-<h4>The Data Work</h4>
+<div id="tidy-data" class="section level3">
+<h3>Tidy Data</h3>
+<div id="the-data-source" class="section level4">
+<h4>The Data Source</h4>
 <ol style="list-style-type: decimal">
 <li>subject_test.txt</li>
 <li>subject_train.txt</li>
@@ -89,27 +89,27 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="how-run_analysis.r-works" class="section level4">
 <h4>How run_analysis.R works</h4>
 <ol style="list-style-type: decimal">
-<li>Checking for a data directory and creating it if not exist.</li>
-<li>Download file project.zip from coursera project web site.</li>
-<li>Set working directory.</li>
-<li>Read data tables test and set it in specific variable name.</li>
-<li>Read data tables traing.</li>
-<li>Merge Subject tables in TSubject variable,</li>
-<li>Merge Features tables in TX variable,</li>
-<li>Merge Activity tables in TY variable,</li>
-<li>Names columns in TSubject, TX, TY and prepare name for dataset with only the measurements on the mean and standard deviation for each measurement.</li>
+<li>Checks for a data directory and creates it if not exist.</li>
+<li>Downloads file project.zip from the coursera project web site.</li>
+<li>Sets the working directory.</li>
+<li>Reads the test data tables.</li>
+<li>Reads the trainint data tables.</li>
+<li>Merges Subject tables and put result in to TSubject variable.</li>
+<li>Merges Features tables and put result in to TX variable.</li>
+<li>Merges Activity tables and put result in to TY variable.</li>
+<li>Names columns in TSubject, TX, TY and prepares names for dataset with only the measurements of the mean and standard deviation for each measurement.</li>
 <li>Merges the training and the test sets to create one data set named AllData.</li>
-<li>Extracts only the measurements on the mean and standard (taking only the columns with “std” and “mean” in the name column) deviation for each measurement in a dataset named OnlyDataMS.</li>
-<li>Create names for dataset with only the measurements on the mean and standard deviation for each measurement and Subject and Activity.</li>
-<li>Create Dataset with with only the measurements on the mean and standard deviation for each measurement and Subject and Activity named OnlyDataSet.</li>
-<li>Uses descriptive activity names to name the activities in the data set.</li>
+<li>Extracts only the measurements of the mean and standard (taking only the columns with “std” and “mean” in the name column) deviation for each measurements in a dataset named OnlyDataMS.</li>
+<li>Creates names for dataset with only the measurements on the mean and standard deviation for each measurement and Subject and Activity.</li>
+<li>Creates Dataset with only the measurements on the mean and standard deviation for each measurement and Subject and Activity named OnlyDataSet.</li>
+<li>Uses descriptive activity names to names the activities in the data set.</li>
 <li>Appropriately labels the data set with descriptive variable names.</li>
 <li>From the data set in step 4, creates a second, independent tidy data, named result, set with the average of each variable for each activity and each subject.</li>
 </ol>
 </div>
 <div id="the-output-dataset" class="section level4">
 <h4>The output dataset</h4>
-<p>The output dataset has the following properties:</p>
+<p>The output dataset is a data frame with 180 observations on 81 variables and the following properties:</p>
 <table>
 <thead>
 <tr class="header">
@@ -122,44 +122,44 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <tbody>
 <tr class="odd">
 <td align="left">Subject</td>
-<td align="left">data.frame</td>
+<td align="left">integer</td>
 <td align="left">2</td>
 <td align="left">Value from 1 to 30</td>
 </tr>
 <tr class="even">
 <td align="left">Activity</td>
-<td align="left">data.frame</td>
+<td align="left">character</td>
 <td align="left">18</td>
-<td align="left">LAYING</td>
+<td align="left">LAYING,</td>
 </tr>
 <tr class="odd">
-<td align="left">Activity</td>
-<td align="left">data.frame</td>
-<td align="left">18</td>
+<td align="left">*</td>
+<td align="left">*</td>
+<td align="left">*</td>
 <td align="left">SITTING</td>
 </tr>
 <tr class="even">
-<td align="left">Activity</td>
-<td align="left">data.frame</td>
-<td align="left">18</td>
+<td align="left">*</td>
+<td align="left">*</td>
+<td align="left">*</td>
 <td align="left">STANDING</td>
 </tr>
 <tr class="odd">
-<td align="left">Activity</td>
-<td align="left">data.frame</td>
-<td align="left">18</td>
+<td align="left">*</td>
+<td align="left">*</td>
+<td align="left">*</td>
 <td align="left">WALKING</td>
 </tr>
 <tr class="even">
-<td align="left">Activity</td>
-<td align="left">data.frame</td>
-<td align="left">18</td>
+<td align="left">*</td>
+<td align="left">*</td>
+<td align="left">*</td>
 <td align="left">WALKING_DOWNSTAIRS</td>
 </tr>
 <tr class="odd">
-<td align="left">Activity</td>
-<td align="left">data.frame</td>
-<td align="left">18</td>
+<td align="left">*</td>
+<td align="left">*</td>
+<td align="left">*</td>
 <td align="left">WALKING_UPSTAIRS</td>
 </tr>
 </tbody>
@@ -177,553 +177,553 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <tbody>
 <tr class="odd">
 <td align="left">TimeBodyAccelerometer-mean()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">17</td>
 <td align="left">0.22159824394</td>
 <td align="left">0.3014610196</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyAccelerometer-mean()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.0405139534294</td>
 <td align="left">-0.00130828765170213</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyAccelerometer-mean()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.152513899520833</td>
 <td align="left">-0.07537846886</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyAccelerometer-std()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.996068635384615</td>
 <td align="left">0.626917070512821</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyAccelerometer-std()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.990240946666667</td>
 <td align="left">0.616937015333333</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyAccelerometer-std()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.987658662307692</td>
 <td align="left">0.609017879074074</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeGravityAccelerometer-mean()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">18</td>
 <td align="left">-0.680043155060241</td>
 <td align="left">0.974508732</td>
 </tr>
 <tr class="even">
 <td align="left">TimeGravityAccelerometer-mean()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.479894842941176</td>
 <td align="left">0.956593814210526</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeGravityAccelerometer-mean()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.49508872037037</td>
 <td align="left">0.9578730416</td>
 </tr>
 <tr class="even">
 <td align="left">TimeGravityAccelerometer-std()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">18</td>
 <td align="left">-0.996764227384615</td>
 <td align="left">-0.829554947808219</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeGravityAccelerometer-std()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">18</td>
 <td align="left">-0.99424764884058</td>
 <td align="left">-0.643578361424658</td>
 </tr>
 <tr class="even">
 <td align="left">TimeGravityAccelerometer-std()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">18</td>
 <td align="left">-0.990957249538462</td>
 <td align="left">-0.610161166287671</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyAccelerometerJerk-mean()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">18</td>
 <td align="left">0.0426880986186441</td>
 <td align="left">0.130193043809524</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyAccelerometerJerk-mean()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.0386872111282051</td>
 <td align="left">0.056818586275</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyAccelerometerJerk-mean()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.0674583919268293</td>
 <td align="left">0.0380533591627451</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyAccelerometerJerk-std()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.994604542264151</td>
 <td align="left">0.544273037307692</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyAccelerometerJerk-std()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.989513565652174</td>
 <td align="left">0.355306716915385</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyAccelerometerJerk-std()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.993288313333333</td>
 <td align="left">0.0310157077775926</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyGyroscope-mean()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.205775427307692</td>
 <td align="left">0.19270447595122</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyGyroscope-mean()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.204205356087805</td>
 <td align="left">0.0274707556666667</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyGyroscope-mean()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.0724546025804878</td>
 <td align="left">0.179102058245614</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyGyroscope-std()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.994276591304348</td>
 <td align="left">0.267657219333333</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyGyroscope-std()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.994210471914894</td>
 <td align="left">0.476518714444444</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyGyroscope-std()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.985538363333333</td>
 <td align="left">0.564875818162963</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyGyroscopeJerk-mean()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.157212539189362</td>
 <td align="left">-0.0220916265065217</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyGyroscopeJerk-mean()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.0768089915604167</td>
 <td align="left">-0.0132022768074468</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyGyroscopeJerk-mean()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.0924998531372549</td>
 <td align="left">-0.00694066389361702</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyGyroscopeJerk-std()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">18</td>
 <td align="left">-0.99654254057971</td>
 <td align="left">0.179148649684615</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyGyroscopeJerk-std()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.997081575652174</td>
 <td align="left">0.295945926186441</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyGyroscopeJerk-std()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.995380794637681</td>
 <td align="left">0.193206498960417</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyAccelerometerMagnitude-mean()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.986493196666667</td>
 <td align="left">0.644604325128205</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyAccelerometerMagnitude-std()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.986464542615385</td>
 <td align="left">0.428405922622222</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeGravityAccelerometerMagnitude-mean()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.986493196666667</td>
 <td align="left">0.644604325128205</td>
 </tr>
 <tr class="even">
 <td align="left">TimeGravityAccelerometerMagnitude-std()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.986464542615385</td>
 <td align="left">0.428405922622222</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyAccelerometerJerkMagnitude-mean()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.99281471515625</td>
 <td align="left">0.434490400974359</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyAccelerometerJerkMagnitude-std()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.994646916811594</td>
 <td align="left">0.450612065720513</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyGyroscopeMagnitude-mean()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.980740846769231</td>
 <td align="left">0.418004608615385</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyGyroscopeMagnitude-std()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.981372675614035</td>
 <td align="left">0.299975979851852</td>
 </tr>
 <tr class="odd">
 <td align="left">TimeBodyGyroscopeJerkMagnitude-mean()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.997322526811594</td>
 <td align="left">0.0875816618205128</td>
 </tr>
 <tr class="even">
 <td align="left">TimeBodyGyroscopeJerkMagnitude-std()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.997666071594203</td>
 <td align="left">0.250173204117966</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometer-mean()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.995249932641509</td>
 <td align="left">0.537012022051282</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometer-mean()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.989034304057971</td>
 <td align="left">0.524187686888889</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometer-mean()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.989473926666667</td>
 <td align="left">0.280735952206667</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometer-std()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.996604570307692</td>
 <td align="left">0.658506543333333</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometer-std()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.990680395362319</td>
 <td align="left">0.560191344</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometer-std()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.987224804307692</td>
 <td align="left">0.687124163703704</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometer-meanFreq()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.635913046346154</td>
 <td align="left">0.159123629063636</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometer-meanFreq()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.379518455061538</td>
 <td align="left">0.466528231788462</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometer-meanFreq()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.520114793584906</td>
 <td align="left">0.402532553395833</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometerJerk-mean()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.994630797358491</td>
 <td align="left">0.474317256051282</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometerJerk-mean()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.989398823913043</td>
 <td align="left">0.276716853307692</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometerJerk-mean()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.992018447826087</td>
 <td align="left">0.157775692377778</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometerJerk-std()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.995073759245283</td>
 <td align="left">0.476803887476923</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometerJerk-std()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.990468082753623</td>
 <td align="left">0.349771285415897</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometerJerk-std()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.993107759855072</td>
 <td align="left">-0.00623647528983051</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometerJerk-meanFreq()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.576044001875</td>
 <td align="left">0.331449281481482</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometerJerk-meanFreq()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.601971415384615</td>
 <td align="left">0.195677336307692</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometerJerk-meanFreq()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.62755547372549</td>
 <td align="left">0.230107945944444</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyGyroscope-mean()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.99312260884058</td>
 <td align="left">0.474962448333333</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyGyroscope-mean()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.994025488297872</td>
 <td align="left">0.328817010088889</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyGyroscope-mean()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.985957788</td>
 <td align="left">0.492414379822222</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyGyroscope-std()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">18</td>
 <td align="left">-0.994652185217391</td>
 <td align="left">0.196613286661538</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyGyroscope-std()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.994353086595745</td>
 <td align="left">0.646233637037037</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyGyroscope-std()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.986725274871795</td>
 <td align="left">0.522454216314815</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyGyroscope-meanFreq()-X</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.395770150677419</td>
 <td align="left">0.249209411510602</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyGyroscope-meanFreq()-Y</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.666814815306122</td>
 <td align="left">0.273141323315789</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyGyroscope-meanFreq()-Z</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.507490866734694</td>
 <td align="left">0.3770740968</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometerMagnitude-mean()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.986800645362319</td>
 <td align="left">0.586637550769231</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometerMagnitude-std()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.987648484461539</td>
 <td align="left">0.178684580868889</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometerMagnitude-meanFreq()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.312338030213846</td>
 <td align="left">0.435846931652174</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometerJerkMagnitude-mean()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.993998275797101</td>
 <td align="left">0.538404846128205</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyAccelerometerJerkMagnitude-std()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.994366667681159</td>
 <td align="left">0.316346415348718</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyAccelerometerJerkMagnitude-meanFreq()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.125210388757581</td>
 <td align="left">0.488088499666667</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyGyroscopeMagnitude-mean()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">20</td>
 <td align="left">-0.986535242105263</td>
 <td align="left">0.203979764835897</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyGyroscopeMagnitude-std()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">18</td>
 <td align="left">-0.981468841692308</td>
 <td align="left">0.236659662496296</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyGyroscopeMagnitude-meanFreq()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.456638670923077</td>
 <td align="left">0.409521611525424</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyGyroscopeJerkMagnitude-mean()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.997617389275362</td>
 <td align="left">0.146618569064407</td>
 </tr>
 <tr class="even">
 <td align="left">FrequencyBodyGyroscopeJerkMagnitude-std()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">19</td>
 <td align="left">-0.99758523057971</td>
 <td align="left">0.287834616098305</td>
 </tr>
 <tr class="odd">
 <td align="left">FrequencyBodyGyroscopeJerkMagnitude-meanFreq()</td>
-<td align="left">data.frame</td>
+<td align="left">numeric</td>
 <td align="left">21</td>
 <td align="left">-0.182923596577778</td>
 <td align="left">0.426301679855072</td>
