@@ -1,11 +1,11 @@
 # Code Book
 This Code Book describes the variables, the data, and any transformations or work performed to clean up the data
 
-### Original Data Source
-The original data source represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
+### The Data Source
+The data source represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
 [full description of original data source](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
-[Here are the original data source](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
+[Here can be found the original data source](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 
 ###Goals
 Createing one R script called ***run_analysis.R*** that does the following:
