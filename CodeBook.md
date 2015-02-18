@@ -51,7 +51,7 @@ The output dataset is a data frame with 180 observations on 81 variables and the
 | **Column Name**  | **Column Class**  | **Str Length**      | **Valid Value**      | 
 |:-----------------|:------------------|:--------------------|:---------------------|
 |   Subject        |   integer         |  2                  | Value from 1 to 30   |
-|   Activity       |   character       |  18                 | LAYING,              |   
+|   Activity       |   character       |  18                 | LAYING               |   
 |       *          |        *          |   *                 | SITTING              |                     
 |       *          |        *          |   *                 | STANDING             |   
 |       *          |        *          |   *                 | WALKING              |                      
