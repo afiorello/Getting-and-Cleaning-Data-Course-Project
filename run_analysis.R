@@ -67,4 +67,5 @@ result <- aggregate(OnlyDataSet[, 1:(ncol(OnlyDataSet)-2)],
                   by=list(Subject = OnlyDataSet$Subject, 
                           Activity = OnlyDataSet$Activity),
                   mean)
-write.table(result,"result.txt",row.name=FALSE)
+
+#write.table(result,"result.txt",row.name=FALSE)
